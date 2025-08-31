@@ -7,7 +7,7 @@
   // Center Modules
   "modules-center": ["hyprland/workspaces"],
   // Bottom Modules
-  "modules-right": ["group/volume", "network", "bluetooth", "cpu", "memory", "disk", "tray"],
+  "modules-right": ["group/volume", "network", "tray"],
 
   "pulseaudio/slider": {
     "min": 0,
@@ -21,6 +21,71 @@
       "transition-duration": 500,
       "transition-top-to-bottom": true
     },
+    "modules": ["pulseaudio", "pulseaudio/slider"]
   },
+
+  "group/misc": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "misc-modules",
+      "transition-top-to-bottom": false
+    },
+    "modules": [
+      "custom/seperator",
+      "bluetooth",
+      "cpu",
+      "memory",
+      "disk"
+    ]
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "tooltip-format": "Volume: {volume}%"
+  },
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "🖧",
+    "format-disconnected": "⚠ ",
+    "max-length": 50,
+    "format-icons": ["▂", "▄", "▆", "█", " "],
+    "tooltip-format": "Connected to {essid}"
+},
+
+
+
+  "custom/seperator": {
+    "format": "__",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "cursor": "pointer",
+  },
+
+
 
 }

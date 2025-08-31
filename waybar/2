@@ -1,0 +1,48 @@
+{
+  "layer": "top",
+  "position": "left",
+
+  // Top Modules
+  "modules-left": ["clock", "group/misc"],
+  // Center Modules
+  "modules-center": ["hyprland/workspaces"],
+  // Bottom Modules
+  "modules-right": ["group/volume", "network", , "tray"],
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+
+  "group/volume": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-top-to-bottom": true
+    },
+  },
+
+  "group/misc": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "misc-modules",
+      "transition-top-to-bottom": false
+    },
+    "modules": [
+      "custom/seperator",
+      "bluetooth",
+      "cpu",
+      "memory",
+      "disk"
+    ]
+  },
+
+  "custom/seperator": {
+    "format": "__",
+    "tooltip": false
+  },
+
+
+}
