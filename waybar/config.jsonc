@@ -1,0 +1,26 @@
+{
+  "layer": "top",
+  "position": "left",
+
+  // Top Modules
+  "modules-left": ["clock", "group/misc"],
+  // Center Modules
+  "modules-center": ["hyprland/workspaces"],
+  // Bottom Modules
+  "modules-right": ["group/volume", "network", "bluetooth", "cpu", "memory", "disk", "tray"],
+
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "vertical"
+  },
+
+  "group/volume": {
+    "orientation": "vertical",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-top-to-bottom": true
+    },
+  },
+
+}
