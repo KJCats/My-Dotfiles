@@ -33,7 +33,6 @@
     },
     "modules": [
       "custom/seperator",
-      "bluetooth",
       "cpu",
       "memory",
       "disk"
@@ -41,8 +40,8 @@
   },
 
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
     "format-muted": "",
     "format-icons": {
         "headphone": "",
@@ -61,11 +60,11 @@
   },
 
   "network": {
-    "interface": "wlan0",
+    "interface": "enp5s0",
     "format": "{ifname}",
     "format-wifi": "{icon}",
-    "format-ethernet": "🖧",
-    "format-disconnected": "⚠ ",
+    "format-ethernet": " ",
+    "format-disconnected": "Dis",
     "max-length": 50,
     "format-icons": ["▂", "▄", "▆", "█", " "],
     "tooltip-format": "Connected to {essid}"
@@ -86,6 +85,32 @@
     "cursor": "pointer",
   },
 
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+    }
+  },
 
+  "clock": {
+    "format": "{:%H\n%M}",
+    "interval": 1,
+  },
 
+  "cpu": {
+    "format": "󰍛 ",
+    "interval": 1,
+  },
+
+  "memory": {
+    "interval": 3,
+    "format": " " 
+  },
+
+  "disk":{
+	"interval": 3,
+  "path": "/home",
+	"format": " ",
+	"unit": "GB"
+  },
 }
